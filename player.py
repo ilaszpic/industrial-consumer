@@ -22,12 +22,14 @@ class Player:
         # below is a simple example  
             
         if time>10 and time<32:
-            if self.prices["purchase"][time-1] < 0.06:
-                return +20
+            if self.prices["sale"][time-1]> self.prices["purchase"][time-1]-10 :
+                return -20
             else :
-                return +10                    
-        else:
-            return +15
+                return +20
+        else :
+            return +10
+         
+        return 0
 
     def update_battery_stock(self,time,load):
         
