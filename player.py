@@ -22,13 +22,16 @@ class Player:
         # below is a simple example  
             
         if time>10 and time<34:
-            if self.prices["sale"][time-1]> 0.079 :
-                return -20
-           
+            if self.prices["sale"][time-1]> 0.078 :
+                return -self.pmax*2/3
+            if self.prices["sale"][time-1]> 0.083 :
+                return -self.pmax
             if self.prices["purchase"][time-1] < 0.087 :
-                return +20
+                return self.pmax*2/3
+            if self.prices["purchase"][time-1] < 0.087 :
+                return self.pmax
         else :
-            return +10
+            return self.pmax/2
          
         return 0
 
