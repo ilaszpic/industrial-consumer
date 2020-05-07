@@ -21,10 +21,11 @@ class Player:
         # implement your policy here to return the load charged / discharged in the battery between -pmax and pmax
         # below is a simple example  
             
-        if time>10 and time<32:
-            if self.prices["sale"][time-1]> self.prices["purchase"][time-1]-10 :
+        if time>10 and time<34:
+            if self.prices["sale"][time-1]> 0.079 :
                 return -20
-            else :
+           
+            if self.prices["purchase"][time-1] < 0.087 :
                 return +20
         else :
             return +10
