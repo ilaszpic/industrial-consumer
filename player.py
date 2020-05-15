@@ -26,7 +26,7 @@ class Player:
         if time >10 and time <40 :
             return -self.pmax/29#on decharge progressivement sur les 29 pas de temps
         else :
-            return self.pmax/10
+            return self.pmax/8
         
         return 0
 
